@@ -1,0 +1,139 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui, sans-serif;
+}
+
+/* PAGE BACKGROUND */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #edeee9, #e100ff);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(135deg, #976ead, #d997fd);
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav li {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav li:hover {
+    color: #f2b1fa;
+}
+
+/* MAIN CONTAINER (GLASSMORPHISM) */
+.container {
+    margin-top: 100px;
+    width: 420px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.3),
+        inset 0 0 0.5px rgba(255,255,255,0.6);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ANSWER BOX */
+#ans {
+    background: linear-gradient(135deg, #f2b1fa, #e6e6e6);
+    color: #1a1a1a;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    display: none;
+    animation: slideUp 0.5s ease;
+}
+
+/* BUTTON */
+#btn {
+    margin-top: 25px;
+    padding: 10px 28px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f2b1fa, #e961f8);
+    color: #1a1a1a;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: all 0.35s ease;
+}
+
+#btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+#btn:active {
+    transform: scale(0.97);
+}
+
+/* LIST */
+ul {
+    list-style: none;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    nav li {
+        font-size: 18px;
+    }
+}
